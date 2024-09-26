@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body {
+  /* background-color: rgb(22, 143, 66); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, #06060694, #00000033), url('pexels-james-wheeler-417074.jpg');
+  backdrop-filter: blur(5px);
+  background-position: center;
+  background-size: cover;
+  /* backface-visibility: hidden;   */
+
+}
+
+.container {
+  /* background-color: purple; */
+  background: rgba(255, 255, 255, .1);
+  backdrop-filter: blur(30px);
+  border: 2px solid rgba(255, 255, 255, .2);
+  height: 100px;
+  width: 320px;
+  border-radius: 16px;
+  max-width: 350px;
+  color: white;
+  position: relative;
+  transition: all .6s ease;
+
+}
+
+.search-box {
+  margin: 0 auto;
+  height: 65px;
+  width: 90%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+
+}
+
+.search-box input {
+  text-transform: uppercase;
+  /* position: absolute; */
+  color: white;
+  width: 100%;
+  height: 50px;
+  padding: 10px 48px 10px 40px;
+  background-color: transparent;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, .2);
+
+}
+
+.search-box input::placeholder {
+  color: white;
+  font-weight: 500;
+
+}
+
+.search-box i {
+  position: absolute;
+  font-size: 20px;
+  left: 10px;
+}
+
+.search-box .bxs-search i {
+  color: white;
+  /* font-size: 20px; */
+
+  position: absolute;
+  transform: translate(0, -50%);
+  /* right: -150px; */
+  left: 245px;
+  cursor: pointer;
+
+}
+
+.weather-box {
+  text-align: center;
+
+}
+
+.weather img {
+  width: 60%;
+  margin: 10px 0;
+
+}
+
+.weather-box .temprature {
+  position: relative;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: 0.5;
+  margin: 20px 0 6px -30px;
+}
+
+.weather-box .temprature span {
+  position: absolute;
+  font-size: 24px;
+  margin-left: 4px;
+}
+
+.weather-box .description {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+.weather-details {
+  display: flex;
+  position: absolute;
+  padding: 0 20px;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+
+
+}
+
+.weather-box,
+.weather-details,
+.not-found {
+  display: none;
+}
+
+
+.weather-details .humadity,
+.weather-details .Wind {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  transform: translateY(-100%);
+}
+
+.weather-details.active .humadity,
+.weather-details.active .Wind {
+  transform: translateY(0%);
+  transition: transform 1s ease;
+  transition-delay: 1.2s;
+}
+
+.weather-details .humadity {
+  padding-right: 10px;
+  justify-content: flex-start;
+  float: left;
+
+}
+
+.weather-details .Wind {
+  padding-right: 10px;
+  justify-content: flex-start;
+  float: right;
+}
+
+.weather-details i {
+  font-size: 34px;
+  margin-right: 10px;
+}
+
+.weather-details span {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.weather-details p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.not-found {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 90px;
+  text-align: center;
+}
+
+.not-found img {
+  width: 85%;
+}
+
+.not-found p {
+  font-size: 22px;
+  margin-top: 22px;
+  font-weight: 500;
+}
+
+.weather-box.active,
+.weather-details.active,
+.not-found.active {
+  display: block;
+
+}
+
+.weather-box .box,
+.not-found .box {
+  transform: translateY(-100%);
+}
+
+.weather-box.active .box,
+.not-found.active .box {
+  transform: translateY(0%);
+  transition: all 1s ease;
+  transition-delay: .6s;
+
+}
